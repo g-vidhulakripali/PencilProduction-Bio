@@ -179,4 +179,3 @@ prevBtn.addEventListener('click', () => {
 // Initialize carousel
 updateCarousel();
 startAutoSlide();
-
