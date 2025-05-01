@@ -122,7 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactBtn) {
         contactBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            alert('Thanks for your interest! This would you like to continue');
+            togglePopup();
+            // alert('Thanks for your interest! This would you like to continue');
         })
     }
 })
@@ -179,3 +180,9 @@ prevBtn.addEventListener('click', () => {
 // Initialize carousel
 updateCarousel();
 startAutoSlide();
+
+
+function togglePopup() {
+    const popup = document.getElementById("formPopup");
+    popup.style.display = popup.style.display === "block" ? "none" : "block";
+  }
