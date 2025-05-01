@@ -720,3 +720,10 @@ footer {
     font-size: 24px;
     cursor: pointer;
   }
+  
+  .form-status {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #2e7d32;
+    display: none;
+  }

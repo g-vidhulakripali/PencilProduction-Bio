@@ -62,19 +62,18 @@
             </div>
         </div>
     </section>
-   <!-- Contact Popup Form with Formsubmit (Simpler & Reliable) -->
+<!-- Contact Popup Form with Formsubmit (Simpler & Reliable) -->
 <a href="javascript:void(0);" onclick="togglePopup()" class="btn cta-btn">Contact Us</a>
 
 <div id="formPopup" class="contact-popup">
   <div class="popup-content">
     <span class="close-btn" onclick="togglePopup()">&times;</span>
     <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/your-email@example.com" method="POST">
+    <div id="formStatus" class="form-status"></div>
+    <form id="contactForm">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-      <!-- Optional: redirect to thank you page -->
-      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
       <button type="submit" class="btn">Send Message</button>
     </form>
   </div>
