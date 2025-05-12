@@ -184,35 +184,55 @@ startAutoSlide();
 
 function togglePopup() {
     const popup = document.getElementById("formPopup");
-    popup.style.display = popup.style.display === "block" ? "none" : "block";
+    const status = document.getElementById("formStatus");
+    const form = document.getElementById("contactForm");
+  
+    // Toggle visibility
+    if (popup.style.display === "block") {
+      popup.style.display = "none";
+    } else {
+      popup.style.display = "block";
+    }
+  
+    // Clear form and status message
+    form.reset();
+    status.style.display = "none";
+    status.textContent = "";
+    status.className = "form-status";
   }
+  
   
   // Handle form submission with feedback banner
   const form = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
   
-  form.addEventListener("submit", function(e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     const formData = new FormData(form);
   
-    fetch("https://formsubmit.co/ajax/your-email@example.com", {
+    fetch("https://formspree.io/f/xyzabcd", {  // <-- your endpoint here
       method: "POST",
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        status.style.color = '#2e7d32';
-        status.textContent = "✅ Message sent successfully!";
-        status.style.display = 'block';
-        form.reset();
-      } else {
-        throw new Error('Submission failed');
+      body: formData,
+      headers: {
+        Accept: "application/json"
       }
     })
-    .catch(error => {
-      status.style.color = '#c62828';
-      status.textContent = "❌ Failed to send message. Please try again.";
-      status.style.display = 'block';
-    });
+      .then(response => {
+        if (response.ok) {
+          status.style.color = '#2e7d32';
+          status.textContent = "✅ Message sent successfully!";
+          status.style.display = 'block';
+          form.reset();
+        } else {
+          return response.json().then(data => {
+            throw new Error(data.errors ? data.errors[0].message : "Submission failed");
+          });
+        }
+      })
+      .catch(error => {
+        status.style.color = '#c62828';
+        status.textContent = "❌ " + error.message;
+        status.style.display = 'block';
+      });
   });
+  

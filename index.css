@@ -103,7 +103,7 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -276,7 +276,7 @@ header {
 /* Testimonials */
 .testimonials {
     padding: 100px 0;
-    background: white;
+    background: #f8f9fa;
 }
 
 .testimonials-intro {
@@ -727,3 +727,58 @@ footer {
     color: #2e7d32;
     display: none;
   }
+  .logo-marquee-section {
+    padding: 80px 0;
+    background: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .logo-marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .logo-track {
+    display: flex;
+    width: max-content;
+    animation: scrollHorizontal 25s linear infinite;
+  }
+  
+  .logo-track img {
+    width: 150px;
+    height: auto;
+    margin: 0 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-track img:hover {
+    transform: scale(1.2);
+  }
+  
+  @keyframes scrollHorizontal {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .service-icon img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+  }
+  
+
+  .author-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
