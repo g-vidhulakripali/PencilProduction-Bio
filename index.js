@@ -184,8 +184,23 @@ startAutoSlide();
 
 function togglePopup() {
     const popup = document.getElementById("formPopup");
-    popup.style.display = popup.style.display === "block" ? "none" : "block";
+    const status = document.getElementById("formStatus");
+    const form = document.getElementById("contactForm");
+  
+    // Toggle visibility
+    if (popup.style.display === "block") {
+      popup.style.display = "none";
+    } else {
+      popup.style.display = "block";
+    }
+  
+    // Clear form and status message
+    form.reset();
+    status.style.display = "none";
+    status.textContent = "";
+    status.className = "form-status";
   }
+  
   
   // Handle form submission with feedback banner
   const form = document.getElementById("contactForm");
