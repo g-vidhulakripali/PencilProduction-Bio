@@ -195,7 +195,7 @@ function togglePopup() {
     e.preventDefault();
     const formData = new FormData(form);
   
-    fetch("https://formsubmit.co/ajax/your-email@example.com", {
+    fetch("https://formsubmit.co/ajax/manipencilproductions@gmail.com", {
       method: "POST",
       headers: { 'Accept': 'application/json' },
       body: formData
