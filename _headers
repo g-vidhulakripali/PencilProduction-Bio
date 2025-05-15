@@ -1,0 +1,6 @@
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Content-Security-Policy: default-src 'self' https://cdn.jsdelivr.net https://i.imgur.com https://upload.wikimedia.org; script-src 'self' https://cdn.jsdelivr.net; img-src 'self' https://i.imgur.com https://upload.wikimedia.org data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self'; frame-ancestors 'none';*/
